@@ -12,6 +12,12 @@ func Constructor() MapSum {
 }
 
 func (this *MapSum) Insert(key string, val int) {
+	for i, s := range this.key {
+		if s == key {
+			this.val[i] = val
+			return
+		}
+	}
 	this.key = append(this.key, key)
 	this.val = append(this.val, val)
 }
